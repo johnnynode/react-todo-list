@@ -4,14 +4,16 @@ class TodoHeader extends Component {
   
   static get defaultProps() {
     return {
+      name: "Joh",
+      count: 0
     }
   }
 
   render() {
-    console.log('I am header!');
+    const {name, todoCount} = this.props;
     return (
       <div>
-        <h1>I am header!</h1>
+        <h1> Hello {name} you have {todoCount} items left to be done!</h1>
       </div>
     )
   }
