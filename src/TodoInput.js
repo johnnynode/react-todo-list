@@ -5,15 +5,18 @@ class TodoInput extends Component {
     return {
       type: "text",
       style: {width:300,height:30},
-      placeholder: "please input your new todo task ...",
+      placeholder: "please input ...",
       autoFocus: false,
+      onKeyDown: () => {},
+      onBlur: () => {}
     }
   }
 
   render() {
-    console.log('I am Input');
     return (
-      <input {... this.props}/>
+      <input
+          {... this.props}
+      />
     )
   }
 }

@@ -7,5 +7,5 @@ ReactDOM.render(
   <div>
     <TodoApp />
   </div>,
-  document.getElementById('app')
+  document.getElementById('root')
 );
