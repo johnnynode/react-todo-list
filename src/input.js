@@ -8,7 +8,8 @@ class Input extends Component {
       placeholder: "Please input here ...",
       autoFocus: false,
       onKeyDown: () => {},
-      onBlur: () => {}
+      onBlur: () => {},
+      onChange: () => {}
     }
   }
 
