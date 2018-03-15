@@ -73,7 +73,7 @@ class ListItem extends Component {
     }
 
     return (
-      <li>
+      <div>
         <Input 
           type="checkbox"
           checked={checked}
@@ -88,7 +88,7 @@ class ListItem extends Component {
             delItem(id);
           }
         }>x</button>
-      </li>
+      </div>
     )
   }
 }
