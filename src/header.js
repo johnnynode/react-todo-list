@@ -12,7 +12,7 @@ class Header extends Component {
     const {name, todoCount} = this.props;  
     return (
       <div>
-        <h1>React's Basic TodoMVC</h1>
+        <h1>React's Basic Todo MVC</h1>
         <span>Hello {name} , you have {todoCount} books left to read!</span>
       </div>
     )
