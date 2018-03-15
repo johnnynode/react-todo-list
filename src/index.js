@@ -6,8 +6,8 @@ import Input from './input';
 
 ReactDom.render(
   <div>
-    <Header />
+    <Header name="John" todoCount={3} />
     <Input />
   </div>,
-  document.querySelector('#root')
+  document.getElementById('root')
 )
