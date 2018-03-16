@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import Header from './header';
-import Input from './input';
-import List from './list';
+import Header from './views/header';
+import Input from './views/input';
+import List from './views/list';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +30,6 @@ class App extends Component {
       return data.json();
     })
     .then((bookList)=>{
-      console.log(bookList);
       this.setState({
         bookList
       });
