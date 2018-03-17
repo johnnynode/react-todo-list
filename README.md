@@ -1,4 +1,4 @@
-React-todomvc
+react-todo-list
 ---
 
-demo here
+just a demo here
