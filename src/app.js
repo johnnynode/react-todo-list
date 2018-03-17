@@ -16,9 +16,12 @@ class App extends Component {
     const {
       readList
     } = this.state;
+
+    const leftCount = readList.filter((item) => !item.checked).length;
+
     return (
       <div>
-        <Header />
+        <Header name="John" leftCount={leftCount} />
         <Input autoFocus={true} />
         <List readList={readList} />
       </div>
