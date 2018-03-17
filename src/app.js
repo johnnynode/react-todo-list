@@ -5,6 +5,13 @@ import Input from './views/input';
 import List from './views/list';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      readList:[]
+    }
+  }
+
   render() {
     return (
       <div>
@@ -20,8 +27,10 @@ class App extends Component {
     .then((data) => {
       return data.json();
     })
-    .then((data) => {
-      console.log(data);
+    .then((readList) => {
+      this.setState({
+        readList
+      })
     })
   }
 }
