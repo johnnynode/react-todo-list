@@ -19,7 +19,20 @@ class List extends Component {
             readList.map((item)=>{
               return (
                 <li key={item.id}>
-                  <ListItem />
+                  <ListItem 
+                    id={item.id}
+                    content={item.content}
+                    checked={item.checked}
+                    toggleItem={()=>{
+                      console.log('1');
+                    }}
+                    editItem={()=>{
+                      console.log('2');
+                    }}
+                    delItem={()=>{
+                      console.log('3');
+                    }}
+                  />
                 </li>
               )
             })

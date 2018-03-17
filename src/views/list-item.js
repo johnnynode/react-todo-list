@@ -5,21 +5,47 @@ import Input from './input';
 class ListItem extends Component {
   static get defaultProps() {
     return {
-      
+      id:0,
+      content:"default book name",
+      checked:false,
+      toggleItem:()=>{},
+      editItem:()=>{},
+      delItem:()=>{}
     }
   }
   render() {
+    const {
+      id,
+      content,
+      checked,
+      toggleItem,
+      editItem,
+      delItem
+    } = this.props;
     return (
       <div>
         <Input
           type="checkbox"
           style={{width:15,height:15,outline:"none"}}
-          checked={false}
+          checked={checked}
+          onChange={
+            ()=>{
+              toggleItem(id);
+            }
+          }
         />
-        <span>
-          hello
+        <span onDoubleClick={
+          ()=>{
+            editItem(id);
+          }
+        }>
+          {content}
         </span>
-        <button>x</button>
+        <button onClick={
+          ()=>{
+            delItem(id);
+          }
+        }>x</button>
       </div>
     )
   }
