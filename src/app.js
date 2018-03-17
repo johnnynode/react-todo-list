@@ -14,6 +14,16 @@ class App extends Component {
       </div>
     )
   }
+
+  componentWillMount() {
+    fetch('books.json')
+    .then((data) => {
+      return data.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+  }
 }
 
 export default App;
