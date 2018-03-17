@@ -5,7 +5,7 @@ class Input extends Component {
     return {
       type: "text",
       style: {width:250,height:30,outline:"none"},
-      placeholder: "Please input here ...",
+      placeholder: "",
       autoFocus: false,
       onKeyDown: () => {},
       onBlur: () => {},
