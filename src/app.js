@@ -31,7 +31,6 @@ class App extends Component {
             (e)=>{
               let val = Utils.trim(e.target.value);
               if(val && e.keyCode === 13) {
-                // update readList
                 this.setState({
                   readList:Utils.addItem(readList,val)
                 })
