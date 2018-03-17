@@ -32,8 +32,8 @@ class List extends Component {
                     toggleItem={(id)=>{
                       toggleItemList(id);
                     }}
-                    editItem={(id)=>{
-                      editItemList(id);
+                    editItem={(id,val)=>{
+                      editItemList(id,val);
                     }}
                     delItem={(id)=>{
                       delItemList(id);

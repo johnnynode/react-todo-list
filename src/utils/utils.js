@@ -19,6 +19,13 @@ class Utils {
     target.checked = !target.checked;
     return context;
   }
+  editItemList(context,id,val) {
+    let target = context.find((item)=>{
+      return item.id === id;
+    });
+    target.content = val;
+    return context;
+  }
   delItemList(context,id) {
     let index = context.findIndex((item)=>{
       return item.id === id;

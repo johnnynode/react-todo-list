@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import Input from './input';
 
+import Utils from '../utils/utils';
+
 class ListItem extends Component {
   constructor (props) {
     super(props);
@@ -48,8 +50,9 @@ class ListItem extends Component {
           defaultValue={content}
           style={{width:200,height:30,outline:"none"}}
           onBlur={
-            () => {
-              editItem(id);
+            (e) => {
+              let val = Utils.trim(e.target.value);
+              editItem(id,val);
               this.changeEditState();
             }
           }
