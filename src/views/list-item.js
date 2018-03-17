@@ -21,7 +21,7 @@ class ListItem extends Component {
     }
   }
   
-  changeEditState = () => {
+  changeEditState () {
     this.setState({
       isEditing:!this.state.isEditing
     });

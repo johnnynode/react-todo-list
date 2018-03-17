@@ -31,7 +31,7 @@ class App extends Component {
             (e)=>{
               let val = Utils.trim(e.target.value);
               if(val && e.keyCode === 13) {
-                // update bookList
+                // update readList
                 this.setState({
                   readList:Utils.addItem(readList,val)
                 })
@@ -43,7 +43,26 @@ class App extends Component {
             }
           }
         />
-        <List readList={readList} />
+        <List 
+          readList={readList} 
+          toggleItemList={
+            (id)=>{
+              this.setState({
+                readList:Utils.toggleItemList(readList,id)
+              });
+            }
+          }
+          editItemList={
+            ()=>{
+
+            }
+          }
+          delItemList={
+            ()=>{
+
+            }
+          }
+        />
       </div>
     )
   }

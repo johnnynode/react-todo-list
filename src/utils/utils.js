@@ -12,6 +12,16 @@ class Utils {
     context.push(json);
     return context;
   }
+  toggleItemList(context,id) {
+    let target = context.find((item)=>{
+      return item.id === id;
+    });
+    target.checked = !target.checked;
+    return context;
+  }
+  delItem(context) {
+
+  }
 }
 
 export default new Utils();

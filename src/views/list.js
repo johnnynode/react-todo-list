@@ -5,12 +5,18 @@ import ListItem from './list-item';
 class List extends Component {
   static get defaultProps() {
     return {
-      readList:[]
+      readList:[],
+      toggleItemList:()=>{},
+      editItemList:()=>{},
+      delItemList:()=>{}
     }
   }
   render() {
     const {
-      readList
+      readList,
+      toggleItemList,
+      editItemList,
+      delItemList
     } = this.props;
     return (
       <div>
@@ -23,14 +29,14 @@ class List extends Component {
                     id={item.id}
                     content={item.content}
                     checked={item.checked}
-                    toggleItem={()=>{
-                      console.log('1');
+                    toggleItem={(id)=>{
+                      toggleItemList(id);
                     }}
-                    editItem={()=>{
-                      console.log('2');
+                    editItem={(id)=>{
+                      editItemList(id);
                     }}
-                    delItem={()=>{
-                      console.log('3');
+                    delItem={(id)=>{
+                      delItemList(id);
                     }}
                   />
                 </li>
