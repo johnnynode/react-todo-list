@@ -7,7 +7,7 @@ class Input extends Component {
       type:"text",
       checked:false,
       autoFocus:false,
-      onKeyDown: () => {},
+      onKeyUp: () => {},
       onBlur: () => {},
       onChange: () => {}
     }

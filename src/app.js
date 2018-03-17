@@ -4,6 +4,8 @@ import Header from './views/header';
 import Input from './views/input';
 import List from './views/list';
 
+import Utils from './utils/utils';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,16 @@ class App extends Component {
     return (
       <div>
         <Header name="John" leftCount={leftCount} />
-        <Input autoFocus={true} />
+        <Input 
+          autoFocus={true} 
+          style={{width:200,height:30,outline:"none"}}
+          onKeyUp={
+            (e)=>{
+              let val = Utils.trim(e.target.value);
+              console.log('val: ', val);
+            }
+          }
+        />
         <List readList={readList} />
       </div>
     )
