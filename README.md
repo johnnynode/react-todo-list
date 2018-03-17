@@ -20,7 +20,7 @@ react-todo-list
 
 ### Build-Server
 
-- $ `yarn global add serve` or `npm i -g serve` (make sure that you have globally add serve)
+- $ `yarn global add serve` or `npm i -g serve` (make sure that you have globally install serve)
 - $ `serve -s build`
 
 ### Visit
