@@ -5,7 +5,11 @@ class Input extends Component {
     return {
       placeholder:"",
       type:"text",
-      checked:false
+      checked:false,
+      autoFocus:false,
+      onKeyDown: () => {},
+      onBlur: () => {},
+      onChange: () => {}
     }
   }
 

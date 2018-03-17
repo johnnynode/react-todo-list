@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Input />
+        <Input autoFocus={true} />
         <List readList={readList} />
       </div>
     )

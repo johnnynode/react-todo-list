@@ -3,6 +3,13 @@ import React, {Component} from 'react';
 import Input from './input';
 
 class ListItem extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      isEditing:false
+    }
+  }
+
   static get defaultProps() {
     return {
       id:0,
@@ -13,6 +20,13 @@ class ListItem extends Component {
       delItem:()=>{}
     }
   }
+  
+  changeEditState = () => {
+    this.setState({
+      isEditing:!this.state.isEditing
+    });
+  }
+
   render() {
     const {
       id,
@@ -22,6 +36,35 @@ class ListItem extends Component {
       editItem,
       delItem
     } = this.props;
+
+    // 模式的切换
+    let bookHtml,
+        isEditing = this.state.isEditing;
+
+    if(isEditing) {
+      bookHtml=
+        <Input 
+          autoFocus={true}
+          defaultValue={content}
+          style={{width:200,height:30,outline:"none"}}
+          onBlur={
+            () => {
+              editItem(id);
+              this.changeEditState();
+            }
+          }
+        />
+    }else{
+      bookHtml =
+        <span onDoubleClick={
+          ()=>{
+            this.changeEditState();
+          }
+        }>
+          {content}
+        </span>
+    }
+
     return (
       <div>
         <Input
@@ -34,13 +77,7 @@ class ListItem extends Component {
             }
           }
         />
-        <span onDoubleClick={
-          ()=>{
-            editItem(id);
-          }
-        }>
-          {content}
-        </span>
+        {bookHtml}
         <button onClick={
           ()=>{
             delItem(id);
