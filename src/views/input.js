@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 
 class Input extends Component {
+  static get defaultProps() {
+    return {
+      placeholder:"",
+      type:"text",
+      checked:false
+    }
+  }
+
   render() {
     return (
-      <div>
-        <input placeholder="input..." />
-      </div>
+      <input {... this.props} />
     )
   }
 }

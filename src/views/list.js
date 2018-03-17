@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import ListItem from './list-item';
+
 class List extends Component {
   static get defaultProps() {
     return {
@@ -17,7 +19,7 @@ class List extends Component {
             readList.map((item)=>{
               return (
                 <li key={item.id}>
-                  <span>{item.content}</span>
+                  <ListItem />
                 </li>
               )
             })
