@@ -13,7 +13,7 @@ class Header extends Component {
     return (
       <div>
         <h1>React's Basic Todo MVC</h1>
-        <span>Hello {name} , you have {todoCount} books left to read!</span>
+        <div style={{paddingBottom:10}}>Hello {name} , you have {todoCount} books left to read!</div>
       </div>
     )
   }

@@ -22,7 +22,7 @@ class App extends Component {
         <Header name="John" todoCount={todoCount} />
         <Input  
           type='text' 
-          placeholder="Please input here ..." 
+          placeholder="Please add book here ..." 
           autoFocus={true}
           onKeyDown={
             (e) => {
@@ -43,7 +43,24 @@ class App extends Component {
             }
           }
         />
-        <List bookList={bookList} />
+        <List 
+          bookList={bookList} 
+          toggleItemList={(id)=>{
+            this.setState({
+              bookList:Util.toggleItemList(bookList,id)
+            });
+          }}
+          delItemList={(id)=>{
+            this.setState({
+              bookList:Util.delItemList(bookList,id)
+            });
+          }}
+          editItemList={(id, content) => {
+            this.setState({
+              bookList:Util.editItemList(bookList, id, content)
+            });
+          }}
+        />
       </div>
     );
   }
