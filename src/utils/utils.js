@@ -19,8 +19,12 @@ class Utils {
     target.checked = !target.checked;
     return context;
   }
-  delItem(context) {
-
+  delItemList(context,id) {
+    let index = context.findIndex((item)=>{
+      return item.id === id;
+    });
+    (index !== -1) && context.splice(index, 1);
+    return context;
   }
 }
 

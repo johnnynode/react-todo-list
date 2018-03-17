@@ -58,8 +58,10 @@ class App extends Component {
             }
           }
           delItemList={
-            ()=>{
-
+            (id)=>{
+              this.setState({
+                readList:Utils.delItemList(readList,id)
+              })
             }
           }
         />
