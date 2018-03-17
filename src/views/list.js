@@ -1,13 +1,27 @@
 import React, {Component} from 'react';
 
 class List extends Component {
+  static get defaultProps() {
+    return {
+      readList:[]
+    }
+  }
   render() {
+    const {
+      readList
+    } = this.props;
     return (
       <div>
         <ul>
-          <li>book1</li>
-          <li>book2</li>
-          <li>book3</li>
+          {
+            readList.map((item)=>{
+              return (
+                <li key={item.id}>
+                  <span>{item.content}</span>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
     )

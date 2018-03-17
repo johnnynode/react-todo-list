@@ -13,11 +13,14 @@ class App extends Component {
   }
 
   render() {
+    const {
+      readList
+    } = this.state;
     return (
       <div>
         <Header />
         <Input />
-        <List />
+        <List readList={readList} />
       </div>
     )
   }
