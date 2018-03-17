@@ -30,7 +30,16 @@ class App extends Component {
           onKeyUp={
             (e)=>{
               let val = Utils.trim(e.target.value);
-              console.log('val: ', val);
+              if(val && e.keyCode === 13) {
+                // update bookList
+                this.setState({
+                  readList:Utils.addItem(readList,val)
+                })
+                e.target.value = "";
+              }
+              if(!val && e.keyCode === 13) {
+                e.target.value = "";
+              }
             }
           }
         />
