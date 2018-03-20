@@ -24,7 +24,7 @@ class App extends Component {
         <Input 
           style={{width:250,height:30,outline:"none",margin:"10px 0",paddingLeft:5}} 
         />
-        <List />
+        <List bookList={bookList} />
       </div>
     )
   }
