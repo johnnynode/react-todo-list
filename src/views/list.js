@@ -30,18 +30,18 @@ class List extends Component {
                     content={item.content}
                     checked={item.checked}
                     toggleItem={
-                      ()=>{
-                        toggleItemList();
+                      (id)=>{
+                        toggleItemList(id);
                       }
                     }
                     editItem={
-                      ()=>{
-                        editItemList();
+                      (id, val)=>{
+                        editItemList(id, val);
                       }
                     }
                     delItem={
-                      ()=>{
-                        delItemList();
+                      (id)=>{
+                        delItemList(id);
                       }
                     }
                   />

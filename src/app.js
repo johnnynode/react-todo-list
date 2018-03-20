@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import Utils from './utils/utils';
+
 import Header from './views/header';
 import Input from './views/input';
 import List from './views/list';
@@ -22,23 +24,44 @@ class App extends Component {
       <div>
         <Header name="John" bookLeft={bookLeft} />
         <Input 
+          autoFocus={true} 
           style={{width:250,height:30,outline:"none",margin:"10px 0",paddingLeft:5}} 
+          onKeyUp={
+            (e)=>{
+              let val = Utils.trim(e.target.value);
+              if(val && e.keyCode === 13) {
+                this.setState({
+                  bookList:Utils.addItem(bookList,val)
+                })
+                e.target.value = "";
+              }
+              if(!val && e.keyCode === 13) {
+                e.target.value = "";
+              }
+            }
+          }
         />
         <List 
           bookList={bookList} 
           toggleItemList={
-            ()=>{
-              console.log('toggle');
+            (id)=>{
+              this.setState({
+                bookList:Utils.toggleItemList(bookList,id)
+              });
             }
           }
           editItemList={
-            ()=>{
-              console.log('edit');
+            (id,val)=>{
+              this.setState({
+                bookList:Utils.editItemList(bookList,id,val)
+              })
             }
           }
           delItemList={
-            ()=>{
-              console.log('del');
+            (id)=>{
+              this.setState({
+                bookList:Utils.delItemList(bookList,id)
+              })
             }
           }
         />
