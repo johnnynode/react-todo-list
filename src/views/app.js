@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-
-import Utils from './utils/utils';
-
-import Header from './views/header';
-import Input from './views/input';
-import List from './views/list';
+import Utils from '../utils';
+import Header from './templates/header';
+import Input from './templates/input';
+import List from './templates/list';
 
 class App extends Component {
   constructor(props) {

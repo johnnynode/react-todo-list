@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import ListItem from './list-item';
 
 class List extends Component {

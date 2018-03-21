@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-
-import Utils from '../utils/utils';
-
+import Utils from '../../utils';
 import Input from './input';
 
 class ListItem extends Component {
@@ -50,8 +48,24 @@ class ListItem extends Component {
         onBlur={
           (e)=>{
             let val = Utils.trim(e.target.value);
+            // 空值还原
+            if(!val) {
+              return this.changeEditState();
+            }
             editItem(id,val);
             this.changeEditState();
+          }
+        }
+        onKeyUp={
+          (e) => {
+            let val = Utils.trim(e.target.value);
+            if(val && e.keyCode === 13) {
+              editItem(id,val);
+              this.changeEditState();
+            }
+            if(!val && e.keyCode === 13) {
+              this.changeEditState();
+            }
           }
         }
       />
